@@ -1,6 +1,6 @@
 package _01_Spies_On_A_Train;
 
-public class TrainCar {
+public class TrainCar  {
 
     private String passenger;
     private String evidence;

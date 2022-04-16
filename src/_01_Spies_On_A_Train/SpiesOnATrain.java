@@ -6,7 +6,7 @@ import _00_Intro_to_Linked_Lists.LinkedList;
 import _00_Intro_to_Linked_Lists.Node;
 
 public class SpiesOnATrain {
-
+	boolean found = false;
     /*
      * A spy has made off with important intel from your intelligence agency!
      * You know the spy is somewhere on this train(LinkedList). Your job is to
@@ -22,7 +22,34 @@ public class SpiesOnATrain {
      * statements.
      */
     String findIntel(LinkedList<TrainCar> train, String[] clues) {
-
+    			int start = 0;
+    			
+    			do {
+    				if(start==0) {
+    					TrainCar traincar = train.getHead().getValue();
+    					String responce = traincar.questionPassenger();
+    					int cluesfound = 0;
+    					
+    					for(int i = 0; i < clues.length; i++) {
+    						if(responce.contains(clues[i])) {
+    							cluesfound++;
+    						}
+    					}
+    					if(cluesfound==clues.length) {
+    						String croppedhalf = responce.substring(29, responce.length());
+    						String fullCrpped = croppedhalf.substring(cluesfound);
+    					}
+    					
+    				}
+    				
+    				
+    				
+    			} while(found = false); {
+    				
+    				
+    				
+    			}
+    	
         return "";
 
     }
