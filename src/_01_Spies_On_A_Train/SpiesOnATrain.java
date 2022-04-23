@@ -23,12 +23,12 @@ public class SpiesOnATrain {
      */
     String findIntel(LinkedList<TrainCar> train, String[] clues) {
     			int start = 0;
-    			
+    			int cluesfound;
     			do {
     				if(start==0) {
-    					TrainCar traincar = train.getHead().getValue();
-    					String responce = traincar.questionPassenger();
-    					int cluesfound = 0;
+    					Node<TrainCar> traincar = train.getHead();
+    					String responce = traincar.getValue().questionPassenger();
+    					 cluesfound = 0;
     					
     					for(int i = 0; i < clues.length; i++) {
     						if(responce.contains(clues[i])) {
@@ -38,13 +38,31 @@ public class SpiesOnATrain {
     					if(cluesfound==clues.length) {
     						String croppedhalf = responce.substring(29, responce.length());
     						String fullCrpped = croppedhalf.substring(cluesfound);
+    						found = true;
+    						return traincar.toString();
+    						
+    					}else {
+    						traincar = traincar.getNext();
+    						
     					}
+    					
+    				}else {
+    					Node<TrainCar> traincar = train.getHead();
+    					traincar = traincar.getNext();
+    					String responce = traincar.getValue().questionPassenger();
+    					cluesfound = 0;
+    					
+    					for(int i = 0; i < clues.length; i++) {
+    						if(responce.contains(clues[i])) {
+    							cluesfound++;
+    						}
+    					
     					
     				}
     				
+    				}
     				
-    				
-    			} while(found = false); {
+    			} while(!found); {
     				
     				
     				
