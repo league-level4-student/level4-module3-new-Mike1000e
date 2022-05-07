@@ -85,6 +85,16 @@ public class RainbowZombieCongaLine {
      * from the conga line!
      */
     public void youAreDone(Zombie dancer) {
+    	int done = 0;
+    
+    	Node<Zombie> currentPosition = congaLine.getHead();
+    	do {
+    		if(dancer.getZombieHatColor().equals(currentPosition.getValue().getZombieHatColor())){
+    			
+    		}
+    		done++;
+    		}while(!(done==congaLine.size()));
+    		
     	
     }
 

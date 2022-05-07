@@ -1,16 +1,19 @@
 package _04_Morse_Code;
 
+import java.lang.reflect.Array;
+
 import _03_Intro_to_Binary_Trees.BinaryTree;
+import _03_Intro_to_Binary_Trees.Node;
 
 public class MorseDecoder {
 
-    BinaryTree<MorseCode> mcTree = new BinaryTree<MorseCode>();
+    static BinaryTree<MorseCode> mcTree = new BinaryTree<MorseCode>();
 
     public static void main(String[] args) {
 
         MorseDecoder md = new MorseDecoder();
         md.initialize();
-        md.decode();
+        md.decode("-.-- --- ..- .- .-. . .- -- .- --.. .. -. --.", mcTree);
 
     }
 
@@ -63,8 +66,20 @@ public class MorseDecoder {
      * english alphabet.
      * 
      */
-    void decode() {
-
+    String decode(String codedScript, BinaryTree<MorseCode> tree) {
+    	String answers = "";
+		String[] array = codedScript.split(" ");
+		
+		for(int i = 0; i < array.length; i++) {
+			
+			MorseCode code = new MorseCode(array[i]);
+			Node<MorseCode> gotten = mcTree.search(code);
+			
+			System.out.println(gotten.getValue());
+		}
+    	
+    	
+    	return answers;
     }
 
 }

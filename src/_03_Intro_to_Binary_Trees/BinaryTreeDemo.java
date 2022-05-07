@@ -33,7 +33,19 @@ public class BinaryTreeDemo {
      */
 
     public static void main(String[] args) {
-
+    	BinaryTree<Integer> tree = new BinaryTree<Integer>();
+    	tree.insert(1);
+    	tree.insert(69);
+    	tree.insert(-8);
+    	tree.insert(100);
+    	tree.insert(420);
+        tree.search(420);
+        tree.delete(1);
+        Node<Integer> root = tree.getRoot();    
+        Node<Integer> left = root.getLeft();
+        System.out.println(root.getValue());
+        System.out.println(left.getValue());
     }
+    
 
 }
